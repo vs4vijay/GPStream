@@ -1,19 +1,29 @@
 <ion-view title="Chat">
-
-  <ion-content padding="true">
   
-    <div class="bar bar-header item-input-inset">
-      <label class="item-input-wrapper">
-        <i class="icon ion-android-contact placeholder-icon"></i>
-        <input type="text" ng-model="chat.sender" placeholder="Your Name">
-      </label>
-      <button class="button button-clear">
-        Set Name
-      </button>
+  <!-- <ion-header-bar align-title="left" class="bar-subheader bar-positive">
+    <label class="buttons" style="width: 70%">
+      <input type="text" ng-model="chat.sender" placeholder="Your Name">
+    </label> 
+
+   <input type="text" class="buttons" style="width: 70%" ng-model="chat.sender" placeholder="Your Name"> 
+
+    <div class="buttons" style="width: 20%">
+      <button class="button" ng-click="watchPosition()">GPS</button>
     </div>
+  </ion-header-bar> -->
+
+  <ion-header-bar class="bar bar-subheader item-input-inset">
+      <label class="item-input-wrapper">
+          <i class="icon ion-android-contact placeholder-icon"></i>
+          <input type="text" ng-model="chat.sender" placeholder="Your Name" autocorrect="off" >
+      </label>
+      <button class="button button-assertive" ng-click="watchPosition()">GPS</button>
+  </ion-header-bar>
+
+  <ion-content padding="true" has-bouncing="true">
 
     <label class="item item-input">
-      <span class="input-label">Your name</span>
+      <span class="input-label">Your name1</span>
       <input type="text" ng-model="chat.sender">
     </label>
 
@@ -27,7 +37,14 @@
     <label class="item item-input">
       <input type="text" ng-model="chat.message">
     </label>
-    <button class="button button-royal button-block icon ion-android-send" placeholder="Enter Your Message" ng-click="addMessage(chat)"> Send </button>
+    <button class="button button-royal button-block icon ion-android-send" ng-disabled="!chat.message" ng-click="addMessage(chat)"> Send </button>
     
   </ion-content>
+
+  <ion-footer-bar class="bar-subfooter bar-positive item-input-inset">
+    <label class="item-input-wrapper">
+      <input type="text" ng-model="chat.message">
+    </label>
+    <button class="button button-royal icon ion-android-send" ng-disabled="!chat.message" ng-click="addMessage(chat)"> Send </button>
+  </ion-footer-bar>
 </ion-view>

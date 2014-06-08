@@ -12,3 +12,5 @@ call adb uninstall com.vizaysoni.vs4vijay.gpstream
 call adb install platforms\android\bin\GPStream-debug.apk
 
 @echo --------------Installtion Finished---------------
+
+rem call msg * installed APK on device

@@ -1,6 +1,6 @@
 // GPStream App Module
 
-angular.module('gpstream', ['ionic', 'starter.services', 'starter.controllers', 'firebase'])
+angular.module('gpstream', ['ionic', 'starter.services', 'starter.controllers', 'firebase', 'google-maps'])
 .config(function($stateProvider, $urlRouterProvider) {
 
   $stateProvider.state('tab', {
@@ -14,6 +14,15 @@ angular.module('gpstream', ['ionic', 'starter.services', 'starter.controllers', 
         'chat-tab': {
           templateUrl: 'app/views/chat.html',
           controller: 'ChatCtrl'
+        }
+      }
+    })
+    .state('tab.maps', {
+      url: '/maps',
+      views: {
+        'maps-tab': {
+          templateUrl: 'app/views/maps.html',
+          controller: 'MapsCtrl'
         }
       }
     })
