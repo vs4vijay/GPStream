@@ -1,0 +1,33 @@
+<ion-view title="Chat">
+
+  <ion-content padding="true">
+  
+    <div class="bar bar-header item-input-inset">
+      <label class="item-input-wrapper">
+        <i class="icon ion-android-contact placeholder-icon"></i>
+        <input type="text" ng-model="chat.sender" placeholder="Your Name">
+      </label>
+      <button class="button button-clear">
+        Set Name
+      </button>
+    </div>
+
+    <label class="item item-input">
+      <span class="input-label">Your name</span>
+      <input type="text" ng-model="chat.sender">
+    </label>
+
+    <ion-list>
+      <ion-item ng-repeat="chat in chats" type="item-text-wrap">
+        <h3>{{chat.sender}}</h3>
+        <p>{{chat.message}}</p>
+      </ion-item>
+    </ion-list>
+
+    <label class="item item-input">
+      <input type="text" ng-model="chat.message">
+    </label>
+    <button class="button button-royal button-block icon ion-android-send" placeholder="Enter Your Message" ng-click="addMessage(chat)"> Send </button>
+    
+  </ion-content>
+</ion-view>
