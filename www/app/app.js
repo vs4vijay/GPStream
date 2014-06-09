@@ -61,6 +61,6 @@ angular.module('gpstream', ['ionic', 'starter.services', 'starter.controllers', 
       }
     });
 
-  $urlRouterProvider.otherwise('/tab/pets');
+  $urlRouterProvider.otherwise('/tab/maps');
 
 });
