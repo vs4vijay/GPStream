@@ -8,6 +8,7 @@ angular.module('gpstream')
         latitude: 45,
         longitude: -73
     },
+	draggable : true,
     zoom: 8
   };
 

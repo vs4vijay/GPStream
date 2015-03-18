@@ -1,11 +1,23 @@
+<style>
+	.angular-google-map-container { height: 400px; }
+</style>
+
+
 <ion-view title="Maps">
 
-  <ion-content padding="true" has-bouncing="true">
+  <ion-content padding="true">
 
-    viz map {{map}}
+    <label class="item item-input">
+      <input type="text" ng-model="map.center.latitude" placeholder="Latitude">
+    </label>
+	<label class="item item-input">
+      <input type="text" ng-model="map.center.longitude" placeholder="Longitude">
+    </label>
 
-    <google-map center="map.center" zoom="map.zoom"></google-map>
-    
+    <google-map center="map.center" zoom="map.zoom" draggable="map.draggable">
+		<marker coords="map.center" animation="Animation.BOUNCE"></marker>
+	</google-map>
+
   </ion-content>
 
 </ion-view>
